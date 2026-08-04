@@ -1,0 +1,35 @@
+{
+  "_comment": "BLOC-A estate rail. Installed by claude-rails/install-rails.sh; do not hand-edit \u2014 edits are overwritten on the next install. Add repo-specific rules under permissions.allow in .claude/settings.local.json (gitignored) or open a PR against claude-rails/rail/settings.json to change it for everyone. See _estate/claude-code-playbook.md sections 1 and 10.",
+  "permissions": {
+    "deny": [
+      "Bash(sudo *)",
+      "Bash(rm -rf *)",
+      "Bash(docker system prune *)",
+      "Bash(docker volume rm *)",
+      "Bash(curl * | sh)",
+      "Bash(curl * | bash)",
+      "Bash(wget * | sh)",
+      "Bash(wget * | bash)",
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/.env.prod)",
+      "Read(**/.env.production)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/id_rsa*)"
+    ],
+    "ask": [
+      "Bash(*deploy*)",
+      "Bash(*migrate*)",
+      "Bash(alembic *)",
+      "Bash(npm publish *)",
+      "Bash(docker push *)",
+      "Bash(terraform *)",
+      "Bash(kubectl *)",
+      "Bash(gh repo delete *)",
+      "Bash(git reset --hard *)",
+      "Bash(git push --force*)"
+    ],
+    "allow": []
+  }
+}
